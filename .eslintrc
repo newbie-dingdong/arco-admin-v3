@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "rules": {
+    "eqeqeq": "off",
+    "no-console": "off",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "vue/html-quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ]
+  },
+  "extends": [
+    "@antfu",
+    "prettier"
+  ]
+}

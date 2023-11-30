@@ -1,0 +1,9 @@
+dist
+node_modules
+src/assets
+*.d.ts
+.vscode/*
+!.vscode/extensions.json
+.idea
+.prettierrc
+verifyCommit.js

@@ -1,0 +1,99 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "username": "管理员",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 2,
+      "username": "阿萨德",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 2
+    },
+    {
+      "id": 3,
+      "username": "大门口",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 1,
+      "username": "管理员",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 2,
+      "username": "阿萨德",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 2
+    },
+    {
+      "id": 3,
+      "username": "大门口",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 1,
+      "username": "管理员",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 2,
+      "username": "阿萨德",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 2
+    },
+    {
+      "id": 3,
+      "username": "大门口",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 1,
+      "username": "管理员",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    },
+    {
+      "id": 2,
+      "username": "阿萨德",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 2
+    },
+    {
+      "id": 3,
+      "username": "大门口",
+      "avatar": "http://image.cscmgg.com/liveProductImages/20230627/3-7EE1A678F293.png",
+      "sex": 1
+    }
+  ],
+  "login": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "token": "tokens"
+    }
+  },
+  "getUser": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "id": 1,
+      "username": "管理员",
+      "avatar": "",
+      "work_number": 10010,
+      "mobile": 18800000000,
+      "department": "技术部",
+      "auth": "管理员",
+      "permissions": ["home:role:dashboard"],
+      "role": "admin",
+      "sex": 1
+    }
+  }
+}
