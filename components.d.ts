@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Breadcrumb: typeof import('./src/components/Breadcrumb/index.vue')['default']
+    Editor: typeof import('./src/components/Editor/index.vue')['default']
     Footer: typeof import('./src/components/Footer/index.vue')['default']
     Logo: typeof import('./src/components/Logo/index.vue')['default']
     Menu: typeof import('./src/components/Menu/index.vue')['default']
@@ -16,5 +17,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SelectPicker: typeof import('./src/components/SelectPicker/index.vue')['default']
+    UploadImage: typeof import('./src/components/UploadImage/index.vue')['default']
   }
 }

@@ -13,3 +13,4 @@ interface ImportMetaEnv {
 declare module 'nprogress'
 declare module 'lodash'
 declare module 'file-saver'
+declare module '@wangeditor/editor-for-vue'

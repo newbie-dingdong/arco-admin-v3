@@ -41,9 +41,9 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/user/list',
-        name: 'user-list',
+        name: 'UserList',
         component: () => import('@/views/user/user-manager/index.vue'),
-        meta: { title: '用户管理', activeMenu: 'user', icon: 'icon-user', hideInMenu: true }
+        meta: { title: '用户管理',catch:true, activeMenu: 'user', icon: 'icon-user', hideInMenu: true }
       }
     ]
   },
@@ -57,7 +57,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/aa/b',
-        name: 'user-center',
+        name: 'UserCenter',
         component: () => import('@/views/user/user-center/index.vue'),
         meta: { title: '用户中心', activeMenu: 'aa', icon: 'icon-user', hideInMenu: true }
       }

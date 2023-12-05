@@ -13,7 +13,7 @@ export interface HttpResponse<T = unknown> {
 const SUCCESS_CODE = 200
 const instance = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL,
-  timeout: 5000,
+  timeout: 30000,
   withCredentials: true
 })
 

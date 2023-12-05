@@ -49,7 +49,7 @@ export default defineComponent({
     }
 
     function renderInput(column: TableProColumn) {
-      return <Input v-model={params[column.dataIndex as string]} placeholder={`请输入${column.title}`} />
+      return <Input allowClear v-model={params[column.dataIndex as string]} placeholder={`请输入${column.title}`} />
     }
 
     function renderCustom(column: TableProColumn) {

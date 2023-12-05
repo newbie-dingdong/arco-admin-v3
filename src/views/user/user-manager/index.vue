@@ -1,6 +1,11 @@
-<script setup lang="ts">
+<script setup lang="tsx">
+import { Button } from '@arco-design/web-vue'
 import TablePro from '@/components/TablePro';
 import type { TableProColumn } from '@/components/TablePro/types';
+
+defineOptions({
+  name: 'UserList'
+})
 
 const cloumns: TableProColumn[] = [
   {
@@ -32,11 +37,15 @@ const list = [
 async function fetchData() {
   return { list, total: 2 }
 }
+
+function renderToolBar () {
+  return (<Button type={'primary'}>新建</Button>)
+}
 </script>
 
 <template>
   <a-card title="用户管理" :bordered="false" class="list-container">
-    <TablePro row-key="id" :request="fetchData" :columns="cloumns">
+    <TablePro :render-toolbar="renderToolBar" row-key="id" :request="fetchData" :columns="cloumns">
 
     </TablePro>
   </a-card>

@@ -6,7 +6,7 @@ import tableProps from './props/table'
 import useLoading from '@/hooks/useLoading'
 
 export default defineComponent({
-  name:'TablePro',
+  name: 'TablePro',
   props: tableProps,
   setup(props, { expose }) {
     // 表格加载状态
@@ -33,7 +33,6 @@ export default defineComponent({
       if (!props.request) 
 return
       setLoading(true)
-      console.log(baseParams)
       const ret = await props?.request?.(baseParams)
       setLoading(false)
       total.value = ret?.total || 0
@@ -112,12 +111,18 @@ return
       baseParams.current = 1
       api()
     }
+
+    function renderToolbar() {
+      return props.renderToolbar?.()
+    }
+
     expose({ reload })
     return {
       renderTableColumn,
       renderPagination,
       loading,
       search,
+      renderToolbar,
       searchColumns,
       data: props.request ? tableData : protoData
     }
@@ -126,6 +131,7 @@ return
     return (
       <div>
         <TableProSearch onHandleSearch={(params) => this.search(params)} columns={this.searchColumns} />
+        <div class={'py-4 border-t-1 border-t-#eee border-t-solid'}>{this.renderToolbar && this.renderToolbar()}</div>
         <Table {...this.$props} loading={this.loading} data={this.data}>
           {{
             columns: () => this.renderTableColumn(this.$slots)

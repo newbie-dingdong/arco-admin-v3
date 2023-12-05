@@ -7,7 +7,7 @@ import type {
   TableExpandable,
   TableRowSelection
 } from '@arco-design/web-vue'
-import type { TableOperationColumn } from '@arco-design/web-vue/es/table/interface'
+import type { TableBorder, TableOperationColumn } from '@arco-design/web-vue/es/table/interface'
 import type { PropType } from 'vue'
 import type { TableProColumn, TableScroll, TableSize, VirtualListProps, positionType } from '../types'
 
@@ -25,6 +25,7 @@ type TableSpanMethod = (data: {
 }) => { rowspan?: number; colspan?: number } | void
 
 export default {
+  renderToolbar: Function as PropType<() => JSX.Element>,
   request: Function as PropType<(params: { current: number; pageSize: number }) => Promise<{ list: any[]; total: number }>>,
   columns: {
     // 表格的列描述信息
@@ -36,11 +37,8 @@ export default {
     type: Array as PropType<TableData[]>,
     default: () => []
   },
-  bordered: {
-    // 是否显示边框
-    type: Boolean,
-    default: true
-  },
+  // 是否显示边框
+  bordered: [Boolean, Object] as PropType<boolean | TableBorder>,
   hoverable: {
     // 是否显示选中效果
     type: Boolean,

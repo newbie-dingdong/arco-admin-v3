@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { IconMenuFold, IconMenuUnfold } from '@arco-design/web-vue/es/icon'
 import Menu from '@/layout/components/Menu/index.vue'
 import NavBar from '@/layout/components/NavBar/index.vue'
 import Footer from '@/layout/components/Footer/index.vue'
+import TagView from '@/layout/components/TagView/index.vue'
 import useAppState from '@/store/app/index.ts'
+import useTags from '@/store/app/tags'
+
+const useTag = useTags()
 
 const APP = useAppState()
+const routeNames = computed(() => useTag.isCatchRoute.map(item => item.name))
 </script>
 
 <template>
@@ -24,10 +30,13 @@ class="layout-slider" :style="{ width: `${APP.slideWidth}px` }" :collapsed="APP.
     </a-layout-sider>
     <a-layout :style="{ paddingLeft: `${APP.slideWidth}px` }" class="layout-content w-full">
       <a-layout class="layout-content-container">
-        <a-layout-content>
+        <TagView />
+        <a-layout-content class="p-3">
           <router-view v-slot="{ Component }">
             <transition appear name="slide-right" mode="out-in">
-              <component :is="Component" />
+              <keep-alive :include="routeNames">
+                <component :is="Component" />
+              </keep-alive>
             </transition>
           </router-view>
         </a-layout-content>
@@ -52,7 +61,7 @@ class="layout-slider" :style="{ width: `${APP.slideWidth}px` }" :collapsed="APP.
   @apply pt-[60px];
 
   .layout-content-container {
-    @apply relative p-3;
+    @apply relative;
   }
 }
 
@@ -60,6 +69,7 @@ class="layout-slider" :style="{ width: `${APP.slideWidth}px` }" :collapsed="APP.
 .slide-right-leave-active {
   transition: all .2s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
+
 .slide-right-enter,
 .slide-right-leave-to {
   opacity: 0;

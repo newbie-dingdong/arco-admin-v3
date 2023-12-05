@@ -2,6 +2,9 @@
 import TablePro from '@/components/TablePro'
 import type { TableProColumn } from '@/components/TablePro/types';
 
+defineOptions({
+  name: 'UserCenter'
+})
 const column: TableProColumn[] = [
   {
     dataIndex: 'index',
